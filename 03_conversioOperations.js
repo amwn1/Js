@@ -29,5 +29,11 @@ console.log( booleanIsLoggedIn); // true
 // 1 => true , 0 => false 
 // "" => false 
 // "Aman" => true 
+// now to talk about strings
+
+let someNumber =33 
+let stringNumber = String(someNumber)
+console.log(stringNumber)
+console.log(typeof stringNumber)
 
 

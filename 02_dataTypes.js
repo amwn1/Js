@@ -19,3 +19,4 @@ let isLoggedin = false
 
 console.log(typeof null); // the output results to "object"\
 console.log(typeof undefined); // the output results to "undefined"
+
