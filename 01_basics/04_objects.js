@@ -40,7 +40,39 @@ const  info = [{id:1,
                 email:"x@gmail.com"}]
  // this above is array of object and is widely used in the current scenarios to get the data 
 
-console.log(Object.keys(user));
+// console.log(Object.keys(user));
 // You can tke out values and keys , the op of these will be in string
 
 //Ex : To check a value if it exists or not we can use  console.log(user.hasoenProperty('isLoggedin')) // will give and in Boolean
+
+
+// ***************************DESTRUCTURING OF OBJECTS*********************************
+const course = {
+    name:"js",
+    price:"99",
+    instructor:"Angela"
+}
+
+const {instructor : ci} = course 
+console.log(ci)
+
+const navbar = ({company}) => {
+
+} // In react this is deStructuring 
+
+navbar(company = "hitesh")
+
+// API concept , the values comes in JSON format 
+// {
+//     name:"AMsn",
+//     fees:"Bahaut zayda",
+//     price:"free"
+// }  // this will throw an error because this is JSON format ( though it is perfectly fine just not here) , object have names ;
+
+// sometimes you get JSON in arrays format as well 
+
+// [
+//     {},
+//     {},
+//     {}
+// ]
