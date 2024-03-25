@@ -31,4 +31,28 @@ function stuff (number1, number2){
         }
         return 'Is the username ${username}'
     }
-    check("Aman")
+    // check("Aman")
+
+
+
+function priceCalculate(num1){
+     return console.log(num1)
+}
+
+function priceCalculate(...num1){ // this is called the rest operator (also spread operator , depends on the use case )
+    return console.log(num1)
+}
+priceCalculate(200,233,211) // this will return an array
+
+
+function priceCalculate(a  , b ,...num1){
+    return console.log(num1)
+}
+
+priceCalculate(12,12,123,44353);
+// this will return the array [123,44353]
+
+// you can pass arrays and objects as well in the function .
+
+
+
