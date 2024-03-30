@@ -1,0 +1,73 @@
+ Javascript execution Context
+ {} => global execution Context , in previous we discussed using "this"
+ TO note :
+ Js is a single threaded , everything is a process 
+ 
+ 2: context
+ Global execution context 
+ Function execution context 
+ Eval execution context (this a property , its fine to just say the above two for an interview)
+
+ {} :-> runs in two phase 
+ 1) Memory creation phase //allocation of memory 
+ 2) Execution phase       // stuff like arithmatic operation is done here
+ 
+ EX :
+ say 
+ let val1 = 10 
+ let val2 = 5
+ function addNum(num1,num2){
+    let total = num1+num2
+    return total
+ }
+ let result1 = addNum(val1,val2)
+ let result2 = addNum(5,3)
+
+ ------------ HOW WILL THIS CODE EXECUTE--------------
+
+ 1-> Global Execution
+ -"this" stores GE 
+ 2-> Memory Phase (the steps in which the above is stored )
+ val1 -> undefined
+ val2 -> undefined 
+ addNum -> defination of the function 
+ result1 -> undefined
+ result2 -> undefined // This is first cycle 
+
+ 3-> Execution Phase 
+ val1 -> 10
+ val2 -> 5 
+ // addnum will execute nothing as this is an execution phase so addnum will not do anything
+ // thos addnum will make its own context box called new exectional context
+ which will contain new variable environment + exection thread 
+ every time a function is called a new executional context will be created ;
+ when a sandbox(executional context) the memory and execution phase will be repeated again
+ So,
+ Memory Phase ->
+ val1 -> undefined
+ val2 -> undefined 
+ total -> undefined 
+ 
+ Execution context ->
+ processing is done , data manupalating etc is done 
+ num1 -> 10 
+ num2 -> 5
+ Note : after GE is used it automatically gets deleted as well 
+ total -> 15 
+ 
+ now  it goes back to the previous memory phase
+ and does 
+ result = 15 
+ now same stuff with resulttwo  new variable environment and a thread with its two phase 
+
+
+ ---------------------- CALL STACK----------------------------
+
+
+ Global execution is the first in the stack 
+ LIFO is used
+ to know in depth and visualization then got this video for a hindi speaker : https://www.youtube.com/watch?v=ByhtOgF6uYM&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=25&t=105s
+ else 
+ https://www.youtube.com/watch?v=W8AeMrVtFLY : In english 
+ 
+ The concept will be better understood with help of visualization . So check them out
