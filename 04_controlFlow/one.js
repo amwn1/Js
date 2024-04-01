@@ -21,6 +21,20 @@
 
 // if the logic in the code is of one line then implicit scope is applied 
 
-let a = 8 ;
-if(a <10) console.log("test") ; // will still work 
+// let a = 8 ;
+// if(a <10) console.log("test") ; // will still work 
 
+const userLoggedIn = true
+const debitCard = true
+const loggedInFromGoogle = false
+const loggedInFromEmail = true
+
+if (userLoggedIn && debitCard && 2==3) {
+    console.log("Allow to buy course");
+}
+
+if (loggedInFromGoogle || loggedInFromEmail) {
+    console.log("User logged in");
+}
+
+// OP: User logged in
