@@ -16,4 +16,28 @@
             <div class="day">Sunday</div>
     </div>
 </body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent) // to access the parent 
+    // console.log(parent.children) // to access the html collection , which is somewhat like an array
+    // console.log(parent.children[1]) // to access the first element 
+    // console.log(parent.children[1].innerHTML) // Tuesday will be printed
+
+
+    // // will  loop work ?
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML)
+    // } // yes this works
+
+parent.children[1].style.color = "orange"
+// console.log(parent.firstElementChild) //<div class="day">Monday</div> -> this will be logged
+// console.log(parent.lastElementChild) // it does what it advertises.
+
+const one = document.querySelector('.day')
+// console.log(one.parentElement);
+// console.log(one.nextElementSibling); 
+
+console.log("NODES : " , parent.childNodes); // 15 nodes are showing 
+ // HTML only counts only one line break and after that it disregards the counting.
+</script>
 </html>
