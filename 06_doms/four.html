@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;" >
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langname){
+      const li =  document.createElement('li')
+      li.innerHTML = `${langname}`
+      document.querySelector('.language').
+      appendChild(li)
+    }
+    addLanguage("CPP")
+    addLanguage("Python") // way to add language , but lets do it in an optimized way
+
+    function optiLang (langname){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langname)) // this here is the optimized as you dont have to traverse he entire tree
+        document.querySelector('.language').appendChild(li)
+    }
+    optiLang("HTML")
+
+    const secondLang = document.querySelector("li:nth-child(2)") // to select the 2nd list element
+    //how to changge the second language . we can use the innerHTML but lets see a better approach
+    const newli = document.createElement('li')
+    newli.textContent = "CSS" // now to add it
+    secondLang.replaceWith(newli) //it is arguable that it is better than innerHTML or not.
+
+    // to edit 
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>'
+
+    // to delete
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove() // will remove the selected element
+</script>
+</html>
