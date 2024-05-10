@@ -29,7 +29,7 @@ buttons.forEach(function(button) {
 
 ```
 ## project 2 code with homework
-```
+``` javascript
 const form = document.querySelector('form')
 const tip = document.querySelector('#tip')
 form.addEventListener('submit' , function(e){
