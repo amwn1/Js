@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river"  src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+//  const owl  = document.getElementById('owl').onclick = function() {
+//     alert("owl clicked");
+//  }
+// document.getElementById('owl').addEventListener('click', function(e) {
+//     alert('Owl clicked')
+// })
+// JS addEventListener 
+// Type, timestamp, defaultPrevented 
+// Target, to Element , srcElement , currentTarget 
+// Clientx, clienty , screenx . screenY
+// Altkey, ctrlKey,shiftKey,keyCode
+//attachEvent() was also used
+// jQuery - on was used instead of addEventListener
+
+// what is event propagation ? 
+// document.getElementById('owl').addEventListener('click', function(e) {
+//     alert('Owl clicked')
+// } , false) -> the false is written here (by default) is the one I am talking about , there are two uses propagation and bubbling
+// propagataion is widely used but will see the example of bubbling as well
+
+// document.getElementById('images').addEventListener('click', function(e) {
+//     console.log("Clicked inside the owl")
+// },false)
+
+// document.getElementById('owl').addEventListener('click', function(e) {
+//     console.log('Owl clicked')
+// } , false)
+ // Which one will be printed first ?
+ // owl clicked and then "Clicked inside the owl" 
+ // this is the example of bubbling
+
+// document.getElementById('images').addEventListener('click', function(e) {
+//     console.log("Clicked inside the owl")
+//  },true)
+
+//  document.getElementById('owl').addEventListener('click', function(e) {
+//    console.log('Owl clicked')
+// } , true)
+// // now this is called capturing mode and the sequence of outputs are reversed
+
+// document.getElementById('images').addEventListener('click', function(e) {
+//     console.log("Clicked inside the owl")
+//  },false)
+
+//  document.getElementById('owl').addEventListener('click', function(e) {
+//    console.log('Owl clicked')
+//    e.stopPropagation() ; // will stop bubbling
+// } , false)
+
+
+
+document.querySelector('#images').addEventListener(
+    'click',function(e){
+        console.log(e.target.tagName); //tagName is also a functionality 
+        if(e.target.tagName == 'IMG'){
+            console.log(e.target.id);
+            let removeit = e.target.parentNode
+            removeit.remove(); 
+            // e.target.parentNode.remove() 
+        }
+    }
+)
+
+</script>
+</html>
