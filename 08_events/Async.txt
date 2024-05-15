@@ -1,0 +1,18 @@
+We are going to talk about Asynchronous and synchronous function
+*JAVASCRIPT is a Synchronous and singleThreaded language 
+
+EXECUTION CONTEXT :
+-> Executing one line of code at a time 
+
+Blocking Code Vs Non Blocking Code 
+
+:Blocking code 
+Blocks the flow of the program 
+Read file in sync
+
+:Non Blocking Code 
+Does not blocks EXECUTION
+Rerad File Async 
+
+*Note : Non blocking code isn't always a good thing contrary to the iniial beliefs .
+
