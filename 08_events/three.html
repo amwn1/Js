@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIRD</title>
+</head>
+<body>
+    <h1>Aman Malik</h1>
+    <button id="start"> STARTO</button>
+    <button id="stop">STAWP</button>
+</body>
+<script>
+    const sayDate = function(str){
+        console.log("DATE:", Date.now())
+    };
+
+    let intervalID; // Declaring intervalID outside
+
+    document.querySelector("#start").addEventListener('click', function(){
+        console.log("It started");
+        intervalID = setInterval(sayDate, 1000);
+    });
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        console.log("It stopped");
+        clearInterval(intervalID);
+    });
+</script>
+</html>
