@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aman Malik</h1>
+    <button id="stop">STAWP</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("Does this work after 3 sec ?")
+    // },2000); // yes it does.
+
+    // setInterval(function(){
+    //     console.log("On repeat")
+    // },500)
+    const changeMe = setTimeout(function() {
+        document.querySelector('h1').innerHTML = "DOES IT WORKS";
+    }, 2000);
+    
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearTimeout(changeMe);
+        console.log("It stopped");
+    });
+        //what is clear timeout?
+    
+
+</script>
+</html>
