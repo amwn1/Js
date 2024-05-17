@@ -14,6 +14,11 @@
   xr.open('GET',requestUrl)
     xr.onreadystatechange = function(){
     console.log(xr.readyState);
+    if(xr.readyState == 4){
+      const data = JSON.parse(this.responseText)
+      console.log(typeof(data))
+        console.log(data.followers)
+    }
     }
   xr.send();
 </script>
