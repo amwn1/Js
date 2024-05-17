@@ -169,3 +169,71 @@ function newGame() {
 }
 
 ```
+## ASSIGNMENT 4 (digital Clock)
+```javascript
+const clock = document.getElementById('clock')
+// document.querySelector('#clock')
+
+
+
+setInterval(function(){
+  let date = new Date()
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000)
+```
+## ASSIGNMENT 5
+```javascript
+console.log('Project 5');
+
+window.addEventListener('keydown',(e) => {
+  insert.innerHTML = `<div class = 'color'>
+  <table>
+  <tr>
+    <th>Key</th>
+    <th>KeyCode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key == " " ? "space":e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+ </table>
+  </div>`
+})
+```
+## ASSIGNMENT 6
+```javascript
+const randomColor = function(){
+  const hex = "0123456789ABCDEF"
+  let color = "#"
+  for(let i = 0 ; i < 6 ; i++){
+    color += hex[Math.floor(Math.random() * 16)]
+  }
+  return color 
+};
+
+let intervalId = null;
+
+const startChangingColor = function(){
+   if (intervalId === null) { 
+    intervalId = setInterval(changeBGcolor, 1000);
+  }
+    function changeBGcolor(){
+      document.body.style.backgroundColor = randomColor()
+    }
+}
+
+const stopChangingColor = function(){
+  if (intervalId !== null) { // Only clear interval if it's set
+    clearInterval(intervalId);
+    intervalId = null;
+  }
+}
+
+document.querySelector('#start').addEventListener('click',startChangingColor)
+
+document.querySelector('#stop').addEventListener('click',stopChangingColor)
+
+
+```
