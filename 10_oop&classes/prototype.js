@@ -28,5 +28,34 @@ Array.prototype.heyMan = function(){ //only giving power to arrays
     console.log("Aman says hi")
 }
 
-hero.heyMan() //this will print the heyMan functions
-power.heyMan() //whereas this will throw error because object sits above in the heirarchy than arrays, fucntions and strings. thus it is not omnipotent
+// hero.heyMan() //this will print the heyMan functions
+// power.heyMan() //whereas this will throw error because object sits above in the heirarchy than arrays, fucntions and strings. thus it is not omnipotent.
+
+const Teacher = { // creating an object here
+
+}
+
+const support = {
+    isAvailable: true
+}
+
+const ta = {
+    makeAssignment: 'JS', 
+    fullTime: true,
+    __proto__: support  // `ta` will access properties of `support`
+}
+
+// No need to set prototype of `support` to `ta`. Instead, make sure `ta` inherits from `support`.
+Object.setPrototypeOf(ta, support); // This ensures `ta` inherits properties from `support`
+
+console.log(ta.isAvailable); // true
+
+let another = "EXMAPLE    "
+String.prototype.trueLength= function(){
+    console.log(`${this}`); // example 
+    // console.log(`${this.name}`)
+    console.log(`Truw length is ${this.trim().length}`)
+}
+
+"malik".trueLength()
+"Hi".trueLength()
