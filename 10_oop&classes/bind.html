@@ -15,7 +15,8 @@
             this.server = "https:localhost:300"
             document.querySelector('button')
             .addEventListener('click', this.handleClick())
-            .bind((this)) // everythiing will binded here and allthe access here without this happens because 
+            .bind((this)) // everythiing will binded here and allthe access here without this happens because all the reference of "this" will be attached
+            //this.library and this. server is also binded along with the function handleClick()
             // requirement 
             }
             handleClick(){
