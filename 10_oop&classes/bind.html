@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+<button>Onclick</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "React"
+            this.server = "https:localhost:300"
+            document.querySelector('button')
+            .addEventListener('click', this.handleClick())
+            .bind((this)) // everythiing will binded here and allthe access here without this happens because 
+            // requirement 
+            }
+            handleClick(){
+                console.log("button Click")
+                console.log(this)  // onlt after bind this will  help show the properties
+            }
+    }
+
+    const app = new React()
+</script>
+</html>
